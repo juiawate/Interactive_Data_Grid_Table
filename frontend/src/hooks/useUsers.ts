@@ -1,10 +1,12 @@
 import { useEffect, useState } from "react";
 import Users from "../entities/User";
+import UsersDropdown from "../entities/UsersDropdown";
 
 const useUsers = () => {
     const [users, setUsers] = useState<Users>({});
     const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState('');
+    const [availableUsers, setAvailableUsers] = useState<UsersDropdown[]>([]);
 
     useEffect(() => {
         setIsLoading(true);
@@ -21,7 +23,22 @@ const useUsers = () => {
             });
     }, []);
 
-    return { users, isLoading, error };
+    useEffect(() => {
+        if (Object.keys(users).length > 0) {
+          let availableUsers: UsersDropdown[] = [];
+          Object.keys(users).map((uId) => {
+            let user = users[uId];
+            availableUsers.push({
+              value: uId,
+              label: user.username,
+              imageUrl: user.avatar,
+            });
+          });
+          setAvailableUsers(availableUsers);
+        }
+      }, [users]);
+
+    return { users, availableUsers, isLoading, error };
 }
 
 export default useUsers;
