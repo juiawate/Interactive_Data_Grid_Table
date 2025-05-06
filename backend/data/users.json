@@ -1,0 +1,42 @@
+{
+    "1": {
+      "username": "John Doe",
+      "avatar": "https://api.dicebear.com/9.x/adventurer/svg?seed=john_doe.svg"
+    },
+    "2": {
+      "username": "Alice Smith",
+      "avatar": "https://api.dicebear.com/9.x/adventurer/svg?seed=alice_smith.svg"
+    },
+    "3": {
+      "username": "Bob Jones",
+      "avatar": "https://api.dicebear.com/9.x/adventurer/svg?seed=bob_jones.svg"
+    },
+    "4": {
+      "username": "Charlie Brown",
+      "avatar": "https://api.dicebear.com/9.x/adventurer/svg?seed=charlie_brown.svg"
+    },
+    "5": {
+      "username": "Diana Williams",
+      "avatar": "https://api.dicebear.com/9.x/adventurer/svg?seed=diana_williams.svg"
+    },
+    "6": {
+      "username": "Eve Johnson",
+      "avatar": "https://api.dicebear.com/9.x/adventurer/svg?seed=eve_johnson.svg"
+    },
+    "7": {
+      "username": "Frank Martin",
+      "avatar": "https://api.dicebear.com/9.x/adventurer/svg?seed=frank_martin.svg"
+    },
+    "8": {
+      "username": "Grace Clark",
+      "avatar": "https://api.dicebear.com/9.x/adventurer/svg?seed=grace_clark.svg"
+    },
+    "9": {
+      "username": "Hank Lee",
+      "avatar": "https://api.dicebear.com/9.x/adventurer/svg?seed=hank_lee.svg"
+    },
+    "10": {
+      "username": "Iris Taylor",
+      "avatar": "https://api.dicebear.com/9.x/adventurer/svg?seed=iris_taylor.svg"
+    }
+}

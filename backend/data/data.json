@@ -1,0 +1,421 @@
+{
+  "columnSchema": [
+    {
+      "key": "id",
+      "type": "number",
+      "title": "ID",
+      "editable": false
+    },
+    {
+      "key": "title",
+      "type": "string",
+      "title": "Title",
+      "editable": true
+    },
+    {
+      "key": "client",
+      "type": "string",
+      "title": "Client Name",
+      "editable": false
+    },
+    {
+      "key": "modifiedDate",
+      "type": "date",
+      "title": "Updated On",
+      "editable": false
+    },
+    {
+      "key": "users",
+      "type": "list",
+      "title": "Owner",
+      "editable": true
+    }
+  ],
+  "data": [
+    {
+      "id": 267,
+      "title": "Record 43",
+      "client": "Beta Industries",
+      "modifiedDate": "2025-03-12",
+      "users": [1, 2]
+    },
+    {
+      "id": 981,
+      "title": "Record 57",
+      "client": "Gamma Tech",
+      "modifiedDate": "2025-01-29",
+      "users": [3]
+    },
+    {
+      "id": 312,
+      "title": "Record 21",
+      "client": "Acme Corp",
+      "modifiedDate": "2025-02-07",
+      "users": [4, 5]
+    },
+    {
+      "id": 854,
+      "title": "Record 89",
+      "client": "Delta Solutions",
+      "modifiedDate": "2025-04-05",
+      "users": [1]
+    },
+    {
+      "id": 437,
+      "title": "Record 16",
+      "client": "Beta Industries",
+      "modifiedDate": "2025-03-22",
+      "users": [6]
+    },
+    {
+      "id": 561,
+      "title": "Record 99",
+      "client": "Gamma Tech",
+      "modifiedDate": "2025-03-30",
+      "users": [3, 6]
+    },
+    {
+      "id": 762,
+      "title": "Record 35",
+      "client": "Delta Solutions",
+      "modifiedDate": "2025-02-15",
+      "users": [7, 1]
+    },
+    {
+      "id": 604,
+      "title": "Record 12",
+      "client": "Acme Corp",
+      "modifiedDate": "2025-04-01",
+      "users": [8]
+    },
+    {
+      "id": 855,
+      "title": "Record 74",
+      "client": "Beta Industries",
+      "modifiedDate": "2025-03-28",
+      "users": [4, 7]
+    },
+    {
+      "id": 192,
+      "title": "Record 81",
+      "client": "Gamma Tech",
+      "modifiedDate": "2025-01-16",
+      "users": [5]
+    },
+    {
+      "id": 670,
+      "title": "Record 33",
+      "client": "Delta Solutions",
+      "modifiedDate": "2025-03-25",
+      "users": [9, 10]
+    },
+    {
+      "id": 446,
+      "title": "Record 50",
+      "client": "Acme Corp",
+      "modifiedDate": "2025-02-12",
+      "users": [10]
+    },
+    {
+      "id": 894,
+      "title": "Record 66",
+      "client": "Beta Industries",
+      "modifiedDate": "2025-02-08",
+      "users": [5, 8]
+    },
+    {
+      "id": 938,
+      "title": "Record 91",
+      "client": "Gamma Tech",
+      "modifiedDate": "2025-03-11",
+      "users": [3]
+    },
+    {
+      "id": 510,
+      "title": "Record 74",
+      "client": "Delta Solutions",
+      "modifiedDate": "2025-01-23",
+      "users": [2, 9]
+    },
+    {
+      "id": 103,
+      "title": "Record 25",
+      "client": "Acme Corp",
+      "modifiedDate": "2025-04-14",
+      "users": [9]
+    },
+    {
+      "id": 757,
+      "title": "Record 20",
+      "client": "Beta Industries",
+      "modifiedDate": "2025-01-11",
+      "users": [10, 4]
+    },
+    {
+      "id": 534,
+      "title": "Record 99",
+      "client": "Gamma Tech",
+      "modifiedDate": "2025-02-18",
+      "users": [2, 5]
+    },
+    {
+      "id": 264,
+      "title": "Record 56",
+      "client": "Delta Solutions",
+      "modifiedDate": "2025-03-17",
+      "users": [1]
+    },
+    {
+      "id": 349,
+      "title": "Record 47",
+      "client": "Acme Corp",
+      "modifiedDate": "2025-03-09",
+      "users": [7]
+    },
+    {
+      "id": 751,
+      "title": "Record 14",
+      "client": "Beta Industries",
+      "modifiedDate": "2025-02-19",
+      "users": [1, 7]
+    },
+    {
+      "id": 172,
+      "title": "Record 82",
+      "client": "Gamma Tech",
+      "modifiedDate": "2025-03-01",
+      "users": [4]
+    },
+    {
+      "id": 185,
+      "title": "Record 10",
+      "client": "Delta Solutions",
+      "modifiedDate": "2025-03-23",
+      "users": [8]
+    },
+    {
+      "id": 314,
+      "title": "Record 54",
+      "client": "Acme Corp",
+      "modifiedDate": "2025-04-07",
+      "users": [1, 10]
+    },
+    {
+      "id": 563,
+      "title": "Record 41",
+      "client": "Beta Industries",
+      "modifiedDate": "2025-01-09",
+      "users": [3]
+    },
+    {
+      "id": 418,
+      "title": "Record 65",
+      "client": "Gamma Tech",
+      "modifiedDate": "2025-02-25",
+      "users": [2]
+    },
+    {
+      "id": 674,
+      "title": "Record 88",
+      "client": "Delta Solutions",
+      "modifiedDate": "2025-02-17",
+      "users": [6]
+    },
+    {
+      "id": 922,
+      "title": "Record 79",
+      "client": "Acme Corp",
+      "modifiedDate": "2025-03-06",
+      "users": [9, 10]
+    },
+    {
+      "id": 304,
+      "title": "Record 18",
+      "client": "Beta Industries",
+      "modifiedDate": "2025-04-03",
+      "users": [3]
+    },
+    {
+      "id": 771,
+      "title": "Record 36",
+      "client": "Gamma Tech",
+      "modifiedDate": "2025-03-10",
+      "users": [10]
+    },
+    {
+      "id": 130,
+      "title": "Record 22",
+      "client": "Delta Solutions",
+      "modifiedDate": "2025-02-11",
+      "users": [5]
+    },
+    {
+      "id": 501,
+      "title": "Record 12",
+      "client": "Acme Corp",
+      "modifiedDate": "2025-01-31",
+      "users": [4]
+    },
+    {
+      "id": 671,
+      "title": "Record 40",
+      "client": "Beta Industries",
+      "modifiedDate": "2025-03-13",
+      "users": [1, 2]
+    },
+    {
+      "id": 207,
+      "title": "Record 24",
+      "client": "Gamma Tech",
+      "modifiedDate": "2025-02-01",
+      "users": [3, 5]
+    },
+    {
+      "id": 328,
+      "title": "Record 93",
+      "client": "Delta Solutions",
+      "modifiedDate": "2025-01-30",
+      "users": [6]
+    },
+    {
+      "id": 429,
+      "title": "Record 37",
+      "client": "Acme Corp",
+      "modifiedDate": "2025-02-24",
+      "users": [9]
+    },
+    {
+      "id": 836,
+      "title": "Record 48",
+      "client": "Beta Industries",
+      "modifiedDate": "2025-03-16",
+      "users": [8]
+    },
+    {
+      "id": 188,
+      "title": "Record 30",
+      "client": "Gamma Tech",
+      "modifiedDate": "2025-03-03",
+      "users": [3]
+    },
+    {
+      "id": 675,
+      "title": "Record 58",
+      "client": "Delta Solutions",
+      "modifiedDate": "2025-04-08",
+      "users": [1, 4, 7]
+    },
+    {
+      "id": 831,
+      "title": "Record 13",
+      "client": "Acme Corp",
+      "modifiedDate": "2025-03-21",
+      "users": [2, 7]
+    },
+    {
+      "id": 542,
+      "title": "Record 70",
+      "client": "Beta Industries",
+      "modifiedDate": "2025-01-24",
+      "users": [1]
+    },
+    {
+      "id": 625,
+      "title": "Record 77",
+      "client": "Gamma Tech",
+      "modifiedDate": "2025-03-04",
+      "users": [8, 9, 1]
+    },
+    {
+      "id": 882,
+      "title": "Record 17",
+      "client": "Delta Solutions",
+      "modifiedDate": "2025-01-22",
+      "users": [2, 8]
+    },
+    {
+      "id": 493,
+      "title": "Record 67",
+      "client": "Acme Corp",
+      "modifiedDate": "2025-04-06",
+      "users": [4, 10]
+    },
+    {
+      "id": 154,
+      "title": "Record 72",
+      "client": "Beta Industries",
+      "modifiedDate": "2025-01-07",
+      "users": [3, 1, 6]
+    },
+    {
+      "id": 991,
+      "title": "Record 64",
+      "client": "Gamma Tech",
+      "modifiedDate": "2025-02-05",
+      "users": [2]
+    },
+    {
+      "id": 244,
+      "title": "Record 44",
+      "client": "Delta Solutions",
+      "modifiedDate": "2025-03-29",
+      "users": [3, 8]
+    },
+    {
+      "id": 512,
+      "title": "Record 80",
+      "client": "Acme Corp",
+      "modifiedDate": "2025-04-04",
+      "users": [1, 6]
+    },
+    {
+      "id": 333,
+      "title": "Record 28",
+      "client": "Beta Industries",
+      "modifiedDate": "2025-02-02",
+      "users": [2]
+    },
+    {
+      "id": 869,
+      "title": "Record 83",
+      "client": "Gamma Tech",
+      "modifiedDate": "2025-03-15",
+      "users": [6]
+    },
+    {
+      "id": 507,
+      "title": "Record 59",
+      "client": "Delta Solutions",
+      "modifiedDate": "2025-01-10",
+      "users": [1]
+    },
+    {
+      "id": 648,
+      "title": "Record 15",
+      "client": "Acme Corp",
+      "modifiedDate": "2025-02-03",
+      "users": [5]
+    },
+    {
+      "id": 741,
+      "title": "Record 73",
+      "client": "Beta Industries",
+      "modifiedDate": "2025-02-14",
+      "users": [7]
+    },
+    {
+      "id": 898,
+      "title": "Record 78",
+      "client": "Gamma Tech",
+      "modifiedDate": "2025-03-18",
+      "users": [2]
+    },
+    {
+      "id": 914,
+      "title": "Record 84",
+      "client": "Delta Solutions",
+      "modifiedDate": "2025-03-20",
+      "users": [1]
+    }
+  ]  
+}
