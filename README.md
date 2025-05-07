@@ -1,7 +1,5 @@
 # Interactive Data Grid
 
-==========================
-
 This is an interactive data grid component where based on provided data, the cell renders the corresponding display.
 
 # To run the project locally
