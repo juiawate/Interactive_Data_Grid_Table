@@ -4,6 +4,7 @@ import useUsers from "../hooks/useUsers";
 import useData from "../hooks/useData";
 import cellRenderer from "../utils/cellRenderer";
 import InputData from "../entities/InputData";
+import Paginate from "./Paginate";
 
 const DataGrid = () => {
   const { users, availableUsers, isLoading: userLoading } = useUsers();
@@ -126,32 +127,13 @@ const DataGrid = () => {
               ))}
             </tbody>
           </table>
-          <div>
-            <select onChange={(e) => setPageSize(parseInt(e.target.value))}>
-              {pageSizeOptions.map((val, key) => (
-                <option value={val} key={key}>
-                  {val}
-                </option>
-              ))}
-            </select>
-            <button
-              className="btn btn-primary btn-sm m-3"
-              disabled={page === 1}
-              onClick={() => setPage(page - 1)}
-            >
-              Previous
-            </button>
-            <span>
-              Showing {page}/{Math.ceil(inputData.length / pageSize)}
-            </span>
-            <button
-              className="btn btn-primary btn-sm m-3"
-              disabled={page === Math.ceil(inputData.length / pageSize)}
-              onClick={() => setPage(page + 1)}
-            >
-              Next
-            </button>
-          </div>
+          <Paginate
+            page={page}
+            pageSizeOptions={pageSizeOptions}
+            totalPages={Math.ceil(inputData.length / pageSize)}
+            setPage={setPage}
+            setPageSize={setPageSize}
+          />
         </>
       )}
     </div>
