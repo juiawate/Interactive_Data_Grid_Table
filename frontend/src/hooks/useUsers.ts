@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import Users from "../entities/User";
 import UsersDropdown from "../entities/UsersDropdown";
 
@@ -23,20 +23,20 @@ const useUsers = () => {
             });
     }, []);
 
-    useEffect(() => {
+    useMemo(() => {
         if (Object.keys(users).length > 0) {
-          let availableUsers: UsersDropdown[] = [];
-          Object.keys(users).map((uId) => {
-            let user = users[uId];
-            availableUsers.push({
-              value: uId,
-              label: user.username,
-              imageUrl: user.avatar,
+            let availableUsers: UsersDropdown[] = [];
+            Object.keys(users).map((uId) => {
+                let user = users[uId];
+                availableUsers.push({
+                    value: uId,
+                    label: user.username,
+                    imageUrl: user.avatar,
+                });
             });
-          });
-          setAvailableUsers(availableUsers);
+            setAvailableUsers(availableUsers);
         }
-      }, [users]);
+    }, [users]);
 
     return { users, availableUsers, isLoading, error };
 }
