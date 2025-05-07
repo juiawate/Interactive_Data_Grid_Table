@@ -14,18 +14,48 @@ const CustomOption = (props: any) => (
   </components.Option>
 );
 
-const CustomMultiValue = (props: any) => (
-  <components.MultiValue {...props}>
-    <div style={{ display: "flex", alignItems: "center" }}>
-      <img
-        src={props.data.imageUrl}
-        alt={props.data.label}
-        style={{ width: 16, height: 16, marginRight: 4 }}
-      />
-      {props.data.label}
-    </div>
-  </components.MultiValue>
-);
+const CustomMultiValue = (props: any) => {
+  const { index, selectProps } = props;
+  const selected = selectProps.value || [];
+  const maxToShow = 2;
+
+  // If this index is after the max shown values
+  if (index >= maxToShow) {
+    if (index === maxToShow) {
+      const hiddenUsers = selected.slice(maxToShow);
+      const tooltipText = hiddenUsers.map((item: any) => item.label).join(", ");
+      const remaining = hiddenUsers.length;
+
+      return (
+        <div
+          className="badge bg-secondary align-self-center"
+          title={tooltipText}
+          style={{ cursor: "default" }}
+        >
+          +{remaining}
+        </div>
+      );
+    }
+    return null;
+  }
+
+  // Render normally for first N items
+  const val = props.data;
+  return (
+    <components.MultiValue {...props}>
+      <div className="d-flex align-items-center">
+        {val.imageUrl && (
+          <img
+            src={val.imageUrl}
+            alt={val.label}
+            style={{ width: 16, height: 16, marginRight: 4 }}
+          />
+        )}
+        {val.label}
+      </div>
+    </components.MultiValue>
+  );
+};
 
 const ListRenderer = (
   value: any,
