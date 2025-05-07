@@ -23,7 +23,7 @@ const Paginate = ({
         ))}
       </select>
       <button
-        className="btn btn-primary btn-sm m-3"
+        className="btn btn-link btn-sm m-3"
         disabled={page === 1}
         onClick={() => setPage(page - 1)}
       >
@@ -33,7 +33,7 @@ const Paginate = ({
         Showing {page}/{totalPages}
       </span>
       <button
-        className="btn btn-primary btn-sm m-3"
+        className="btn btn-link btn-sm m-3"
         disabled={page === totalPages}
         onClick={() => setPage(page + 1)}
       >
