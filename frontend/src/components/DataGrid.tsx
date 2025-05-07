@@ -1,8 +1,9 @@
-import { useState, ChangeEvent } from "react";
+import { useState, ChangeEvent, useEffect } from "react";
 import ColumnSchema from "../entities/ColumnSchema";
 import useUsers from "../hooks/useUsers";
 import useData from "../hooks/useData";
 import cellRenderer from "../utils/cellRenderer";
+import InputData from "../entities/InputData";
 
 const DataGrid = () => {
   const { users, availableUsers, isLoading: userLoading } = useUsers();
@@ -14,6 +15,18 @@ const DataGrid = () => {
     setData,
   } = useData();
   const [selectedRows, setSelectedRows] = useState<Set<string>>(new Set());
+  const [pageSize, setPageSize] = useState(10);
+  const pageSizeOptions = [10, 20, 50];
+  const [paginatedData, setPaginatedData] = useState<InputData[]>([]);
+  const [page, setPage] = useState(1);
+
+  useEffect(() => {
+    setPaginatedData(inputData.slice(0, pageSize));
+  }, [inputData, pageSize]);
+
+  useEffect(() => {
+    setPaginatedData(inputData.slice((page - 1) * pageSize, pageSize * page));
+  }, [page]);
 
   const handleSelectAllChange = (event: ChangeEvent<HTMLInputElement>) => {
     const newSelectedRows = new Set<string>();
@@ -54,41 +67,20 @@ const DataGrid = () => {
       {(Object.keys(users).length > 0 && userLoading) || dataLoading ? (
         <p>Loading data...</p>
       ) : (
-        <table className="table caption-top table-striped table-fixed table-bordered table-hover">
-          <caption>Interactive Data Grid</caption>
-          <thead className="thead-dark">
-            <tr>
-              <th className="text-center">
-                <input
-                  type="checkbox"
-                  onChange={handleSelectAllChange}
-                  checked={inputData.length === selectedRows.size}
-                />
-              </th>
-              {columns.map((column) => (
-                <th
-                  key={column.key}
-                  className={
-                    column.type === "list" ? "text-center w-25" : "text-center"
-                  }
-                >
-                  {column.title}
-                </th>
-              ))}
-            </tr>
-          </thead>
-          <tbody>
-            {inputData.map((data, index) => (
-              <tr key={index}>
-                <td className="text-center">
+        <>
+          <table className="table caption-top table-striped table-fixed table-bordered table-hover">
+            <caption>Interactive Data Grid</caption>
+            <thead className="thead-dark">
+              <tr>
+                <th className="text-center">
                   <input
                     type="checkbox"
-                    onChange={() => handleSelectChange(data.id)}
-                    checked={selectedRows.has(data.id)}
+                    onChange={handleSelectAllChange}
+                    checked={paginatedData.length === selectedRows.size}
                   />
-                </td>
+                </th>
                 {columns.map((column) => (
-                  <td
+                  <th
                     key={column.key}
                     className={
                       column.type === "list"
@@ -96,19 +88,71 @@ const DataGrid = () => {
                         : "text-center"
                     }
                   >
-                    {cellRenderer(
-                      column,
-                      data[column.key],
-                      users,
-                      availableUsers,
-                      (key, newVal) => handleCellUpdate(data.id, column, newVal)
-                    )}
-                  </td>
+                    {column.title}
+                  </th>
                 ))}
               </tr>
-            ))}
-          </tbody>
-        </table>
+            </thead>
+            <tbody>
+              {paginatedData.map((data, index) => (
+                <tr key={index}>
+                  <td className="text-center">
+                    <input
+                      type="checkbox"
+                      onChange={() => handleSelectChange(data.id)}
+                      checked={selectedRows.has(data.id)}
+                    />
+                  </td>
+                  {columns.map((column) => (
+                    <td
+                      key={column.key}
+                      className={
+                        column.type === "list"
+                          ? "text-center w-25"
+                          : "text-center"
+                      }
+                    >
+                      {cellRenderer(
+                        column,
+                        data[column.key],
+                        users,
+                        availableUsers,
+                        (key, newVal) =>
+                          handleCellUpdate(data.id, column, newVal)
+                      )}
+                    </td>
+                  ))}
+                </tr>
+              ))}
+            </tbody>
+          </table>
+          <div>
+            <select onChange={(e) => setPageSize(parseInt(e.target.value))}>
+              {pageSizeOptions.map((val, key) => (
+                <option value={val} key={key}>
+                  {val}
+                </option>
+              ))}
+            </select>
+            <button
+              className="btn btn-primary btn-sm m-3"
+              disabled={page === 1}
+              onClick={() => setPage(page - 1)}
+            >
+              Previous
+            </button>
+            <span>
+              Showing {page}/{Math.ceil(inputData.length / pageSize)}
+            </span>
+            <button
+              className="btn btn-primary btn-sm m-3"
+              disabled={page === Math.ceil(inputData.length / pageSize)}
+              onClick={() => setPage(page + 1)}
+            >
+              Next
+            </button>
+          </div>
+        </>
       )}
     </div>
   );
