@@ -1,6 +1,7 @@
 # Interactive Data Grid
 
 This is an interactive data grid component where based on provided data, the cell renders the corresponding display.
+Framework used: `node.js`, `ReactJS`, `Typescript`, `Bootstrap`, `react-select`
 
 # To run the project locally
 
@@ -15,8 +16,6 @@ This is an interactive data grid component where based on provided data, the cel
    - Run `npm start`
 4. Go to `http://localhost:3000/`
 
-#
-
 # Current Assumptions
 
 - The api hosted by node.js server will provide the required InputData.
@@ -28,4 +27,5 @@ This is an interactive data grid component where based on provided data, the cel
 # Future Enhancements
 
 - More types can be added in cellRenderer based on customer's requirement.
-- Tables can have more capabilities like `sorting`, `filtering`, `column visibility`
+- Tables can have more capabilities like `sorting`, `filtering`, `column visibility`.
+- Provide `delete` functionality with popup modal.
