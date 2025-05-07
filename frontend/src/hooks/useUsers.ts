@@ -33,6 +33,7 @@ const useUsers = () => {
                     label: user.username,
                     imageUrl: user.avatar,
                 });
+                return availableUsers;
             });
             setAvailableUsers(availableUsers);
         }

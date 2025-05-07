@@ -63,9 +63,11 @@ const DataGrid = () => {
     );
   };
 
+  if (dataError) throw dataError;
+
   return (
     <div className="table-responsive">
-      {(Object.keys(users).length > 0 && userLoading) || dataLoading ? (
+      {userLoading || dataLoading ? (
         <p>Loading data...</p>
       ) : (
         <>
