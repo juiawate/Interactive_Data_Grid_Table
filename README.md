@@ -15,9 +15,17 @@ This is an interactive data grid component where based on provided data, the cel
    - Run `npm start`
 4. Go to `http://localhost:3000/`
 
+#
+
 # Current Assumptions
 
 - The api hosted by node.js server will provide the required InputData.
-- Currently, it is static data stored in a json file.
-- The json data should also provide the columnSchema in order to have the columns render automatically
+- Currently, it is static data stored in a json file in `backend` folder.
+- The json data should also provide the columnSchema in order to have the columns render automatically.
 - The users list is populated based on users.json which should also be provided by backend.
+- The cellRenderer function is supported for `string`, `number`, `date`, `list` types.
+
+# Future Enhancements
+
+- More types can be added in cellRenderer based on customer's requirement.
+- Tables can have more capabilities like `sorting`, `filtering`, `column visibility`
